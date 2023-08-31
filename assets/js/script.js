@@ -68,7 +68,9 @@ function calculateCorrectAnswer(){
         return [op1 * op2, "multiply"];
         } else if (operator === "-") {
             return [op1 - op2, "subtract"];
-        } else {
+        } else if (operator === "/") {
+            return [op1 /op2, "division"];
+        }else {
         alert(`Unimplemented operator ${operator}`);
         throw `Unimplemented operator ${operator}. Aborting!`;
     }
@@ -107,7 +109,7 @@ function displayMultiplyQuestion(op1, op2){
 }
 
 function displayDivisionQuestion(op1, op2) {
-    document.getElementById("op1").textContent = op1;
+    document.getElementById("op1").textContent = op1 * op2;
     document.getElementById("op2").textContent = op2;
     document.getElementById("operator").textContent = "/";
 }
